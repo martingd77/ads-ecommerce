@@ -13,7 +13,11 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Stack from '@mui/material/Stack';
-import logo from '../../src/img/ad.png';
+import logo from '../../img/ad.png'
+import CartWidget from '../CartWidget/CartWidget';
+import ItemListContainer from '../ItemListContainer/ItemListContainer';
+import { padding } from '@mui/system';
+
 
 const pages = ['Servicios', 'Nosotros', 'Tienda'];
 const settings = ['Perfil', 'Cuenta', 'Logout'];
@@ -39,23 +43,25 @@ const NavBar = () => {
 
 
     return (
-        <AppBar position="static" color="secondary">
+      <>
+
+      <AppBar position="static" color="secondary">
           <Container maxWidth="xl">
             <Toolbar disableGutters>
-            <Stack direction="row" spacing={3}>
-                <Avatar alt="logo" src={logo}  />
-            </Stack>
-           
+              <Stack direction="row" spacing={3}>
+                <Avatar alt="logo" src={logo} />
+              </Stack>
+
               <Typography
                 variant="h6"
                 noWrap
                 component="div"
                 sx={{ mr: 4, ml: 2, display: { xs: 'none', md: 'flex' } }}
               >
-                  
+
                 ALEJANDRA DIAZ STUDIO
               </Typography>
-    
+
               <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                 <IconButton
                   size="large"
@@ -65,7 +71,7 @@ const NavBar = () => {
                   onClick={handleOpenNavMenu}
                   color="inherit"
                 >
-                {/*   <MenuIcon /> */}
+                  {/*   <MenuIcon /> */}
                 </IconButton>
                 <Menu
                   id="menu-appbar"
@@ -111,13 +117,21 @@ const NavBar = () => {
                   </Button>
                 ))}
               </Box>
-    
+              <Box
+                sx={{
+                  padding: 2,
+                  marginRight: 1,
+                }}>
+                <CartWidget />
+              </Box>
+
               <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Abrir configuraciones">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                     <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
                   </IconButton>
                 </Tooltip>
+
                 <Menu
                   sx={{ mt: '45px' }}
                   id="menu-appbar"
@@ -139,11 +153,20 @@ const NavBar = () => {
                       <Typography textAlign="center">{setting}</Typography>
                     </MenuItem>
                   ))}
+
                 </Menu>
+
               </Box>
+
             </Toolbar>
           </Container>
         </AppBar>
+        
+        <ItemListContainer/>
+        
+        </>
+
+        
       );
     };
 
