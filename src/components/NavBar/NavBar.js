@@ -15,8 +15,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Stack from '@mui/material/Stack';
 import logo from '../../img/ad.png'
 import CartWidget from '../CartWidget/CartWidget';
-import ItemListContainer from '../ItemListContainer/ItemListContainer';
-import { padding } from '@mui/system';
 
 
 const pages = ['Servicios', 'Nosotros', 'Tienda'];
@@ -44,7 +42,7 @@ const NavBar = () => {
 
     return (
       <>
-
+      {/* tag de apertura */}
       <AppBar position="static" color="secondary">
           <Container maxWidth="xl">
             <Toolbar disableGutters>
@@ -161,12 +159,8 @@ const NavBar = () => {
             </Toolbar>
           </Container>
         </AppBar>
-        
-        <ItemListContainer/>
-        
+        {/* tag de cierre */}
         </>
-
-        
       );
     };
 
