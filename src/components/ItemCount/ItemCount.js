@@ -1,12 +1,13 @@
-import React, {useState} from 'react';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import CardItem from '../CardItem/CardItem';
+import React, {useState} from 'react';
 
-const ItemCount = ({ stock, initial, onAdd }) => {
 
-const [add, setAdd] = useState(1);
+const ItemCount = ({ stock, initial, handleAdd }) => {
+
+const [add, setAdd] = useState(initial);
 
 const addItem = () => {
     if(add < stock){
@@ -19,11 +20,6 @@ const removeItem = () => {
         setAdd(add - 1);
     }
 }
-
-const handleAdd = e => {
-    alert('Agregaste ' + add + ' productos');
-  };
-
     return(
         <>
         <Box

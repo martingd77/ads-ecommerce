@@ -16,7 +16,7 @@ const CardItem = () => {
                     {/* be{bull}nev{bull}o{bull}lent */}
                     </Typography>
                     <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    Aqui ira alguna imagen
+                    
                     </Typography>
                     <img className='catalog-img' src={require('../../img/labial-mac-rojo.png')} alt='Mac rojo'/>
                     <Typography variant="body2">
