@@ -1,22 +1,16 @@
 import React from 'react';
 import './ItemListContainer.css'
-import ItemCount from '../ItemCount/ItemCount';
-
-
-const handleAdd = (add) => {
-    alert('Agregaste ' +  {add}  + ' productos');
-    console.log(`Agregaste ${add} productos al carrito.`);
-  };
+import ItemList from '../ItemList/ItemList';
 
 const ItemListContainer = ({title}) => {
     return(
-        <>
+        <section className="item-list-container">
             <div className='main-div'>
                 <h2>{title}</h2>
             </div>
-            <ItemCount stock={5} initial={1} handleAdd={handleAdd}/>
-        </>
-       
+
+            <ItemList/>
+        </section>
     )
 };
 

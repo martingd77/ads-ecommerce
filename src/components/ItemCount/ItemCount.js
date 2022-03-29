@@ -1,25 +1,16 @@
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import CardItem from '../CardItem/CardItem';
 import React, {useState} from 'react';
-
 
 const ItemCount = ({ stock, initial, handleAdd }) => {
 
 const [add, setAdd] = useState(initial);
 
-const addItem = () => {
-    if(add < stock){
-        setAdd(add + 1);
-    }
-}
+const addItem = (num) => {
+        setAdd(add + num);
+};
 
-const removeItem = () => {
-    if(add > 1){
-        setAdd(add - 1);
-    }
-}
     return(
         <>
         <Box
@@ -32,15 +23,25 @@ const removeItem = () => {
                 },
             }} 
         >
-        <CardItem/>
         <ButtonGroup color="secondary" aria-label="medium secondary button group">
-            <Button size='large' key="remove" onClick={removeItem} > - </Button>
+            <Button size='large' key="remove" 
+            onClick={ () => addItem(-1)} 
+            disabled={add === initial ? true : null}> 
+            - 
+            </Button>
             <Button size='large' disabled key="stock">{add}</Button>  
-            <Button size='large' key="add" onClick={addItem}>+</Button>
+            <Button size='large' key="add" 
+            onClick={ ()=> addItem(+1)}
+            disabled={add === stock ? true : null}>
+            +
+            </Button>
         </ButtonGroup>    
        
         </Box>
-        <Button variant="contained" color='secondary' size='small' key="Agregar" onClick={handleAdd}>Agregar al carrito</Button>
+        <Button variant="contained" color='secondary' size='small' key="Agregar" 
+        onClick={()=> handleAdd(add)}>
+            Agregar al carrito
+        </Button>
         </>
     )
 }

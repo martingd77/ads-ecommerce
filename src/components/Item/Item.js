@@ -2,27 +2,30 @@ import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import './CardItem.css'
+import './Item.css'
+import ItemCount from '../ItemCount/ItemCount';
 
-const CardItem = () => {
+const Item = ({name, picture, price, id, stock}) => {
+    const handleAdd = (add) =>{
+        alert(`Agregaste ${add} productos al carrito.`);
+    };
+    
     return(
         <>
            <Card sx={{ minWidth: 275 }}>
                 <CardContent>
                     <Typography sx={{ fontSize: 15 }} color="text.primary" gutterBottom>
-                    Labial Mac Rojo Intenso
+                    {name}
                     </Typography>
-                    <Typography variant="h5" component="div">
-                    {/* be{bull}nev{bull}o{bull}lent */}
-                    </Typography>
+                
                     <Typography sx={{ mb: 1.5 }} color="text.secondary">
                     
                     </Typography>
-                    <img className='catalog-img' src={require('../../img/labial-mac-rojo.png')} alt='Mac rojo'/>
+                    <img className='catalog-img' src={picture} alt=''/>
                     <Typography variant="body2">
-                        Aca el precio
+                        $ {price}
                     <br />
-                    {'"Algo mas"'}
+                    <ItemCount stock={stock} handleAdd={handleAdd} initial={1} />
                     </Typography>
                 </CardContent>
             </Card>
@@ -31,4 +34,4 @@ const CardItem = () => {
     )
 };
 
-export default CardItem;
+export default Item;
