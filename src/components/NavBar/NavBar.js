@@ -15,9 +15,21 @@ import MenuItem from '@mui/material/MenuItem';
 import Stack from '@mui/material/Stack';
 import logo from '../../img/ad.png'
 import CartWidget from '../CartWidget/CartWidget';
+import { Link } from 'react-router-dom'
 
 
-const pages = ['Servicios', 'Nosotros', 'Tienda'];
+const linkStyle = {
+  
+  textDecoration: "none",
+  color: 'white'
+};
+
+const pages = ['Servicios', 'Nosotros'];
+const categorias = [
+  {title : 'LABIALES', url : '/Labiales'},
+  {title: 'BROCHAS', url:'/Brochas'},
+  {title: 'SKINCARE', url:'/Skincare'}  
+]
 const settings = ['Perfil', 'Cuenta', 'Logout'];
 
 const NavBar = () => {
@@ -47,7 +59,10 @@ const NavBar = () => {
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               <Stack direction="row" spacing={3}>
+                <Link to={'/'}>
                 <Avatar alt="logo" src={logo} />
+                </Link>
+                
               </Stack>
 
               <Typography
@@ -89,11 +104,6 @@ const NavBar = () => {
                     display: { xs: 'block', md: 'none' },
                   }}
                 >
-                  {pages.map((page) => (
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">{page}</Typography>
-                    </MenuItem>
-                  ))}
                 </Menu>
               </Box>
               <Typography
@@ -102,7 +112,7 @@ const NavBar = () => {
                 component="div"
                 sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
               >
-                LOGO
+                ADS
               </Typography>
               <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                 {pages.map((page) => (
@@ -114,6 +124,16 @@ const NavBar = () => {
                     {page}
                   </Button>
                 ))}
+                 {categorias.map((categoria) => (
+                    <Button
+                      key={categoria.title}
+                      onClick={handleCloseNavMenu}
+                      sx={{ my: 2, color: 'white', display: 'block' }}
+                    >
+                      <Link style={linkStyle} to={categoria.url}>{categoria.title}</Link>
+                      
+                  </Button>
+                  ))}
               </Box>
               <Box
                 sx={{
@@ -151,7 +171,7 @@ const NavBar = () => {
                       <Typography textAlign="center">{setting}</Typography>
                     </MenuItem>
                   ))}
-
+          
                 </Menu>
 
               </Box>

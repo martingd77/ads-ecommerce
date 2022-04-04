@@ -1,4 +1,4 @@
-const productList = [
+const mockProductos = [
     {
         name: 'Labial rojo Mac',
         price: 2000,
@@ -6,7 +6,6 @@ const productList = [
         stock: 5,
         id: 1,
         category: 'Labiales',
-        description: 'Labial Mac, rojo matte. De larga duración, no se corre ni transfiere.'
       },
       {
         name: 'Labial nude Mac',
@@ -15,16 +14,14 @@ const productList = [
         stock: 10,
         id: 2,
         category: 'Labiales',
-        description: 'Labial Mac, nude matte. De larga duración, no se corre ni transfiere.'
       },
       {
-        name: 'Labial bordeaux oscuro Mac',
+        name: 'Labial oscuro Mac',
         price: 2000,
         picture: require('../img/labial-mac-oscuro.jpeg'),
         stock: 6,
         id: 3,
         category: 'Labiales',
-        description: 'Labial Mac, bordeaux oscuro matte. De larga duración, no se corre ni transfiere.'
       },
       {
         name: 'Labial rojo Ricosti',
@@ -33,7 +30,6 @@ const productList = [
         stock: 10,
         id: 4,
         category: 'Labiales',
-        description: 'Labial Ricosti, rojo matte. De larga duración, no se corre ni transfiere.'
       },
       {
         name: 'Labial nude Ricosti',
@@ -42,7 +38,6 @@ const productList = [
         stock: 3,
         id: 5,
         category: 'Labiales',
-        description: 'Labial Ricosti, nude matte. De larga duración, no se corre ni transfiere.'
       },
       {
         name: 'Brocha N19',
@@ -51,7 +46,6 @@ const productList = [
         stock: 5,
         id: 6,
         category: 'Brochas',
-        description: 'Pelo sintético super suave. Mango de bambú. Angulada ideal para contornear y aplicar rubor.'
       },
       {
         name: 'Brocha D23',
@@ -60,7 +54,6 @@ const productList = [
         stock: 10,
         id: 7,
         category: 'Brochas',
-        description: 'Pelo más fuerte y compacto. Para una aplicación correcta de sombras y pigmentos de manera más saturada y puntual.'
       },
       {
         name: 'Brocha D38',
@@ -69,7 +62,6 @@ const productList = [
         stock: 6,
         id: 8,
         category: 'Brochas',
-        description: 'Suave y ligera. Para una aplicación liviana de bases o preparación de la piel.'
       },
       {
         name: 'Lidherma Protector Solar SPF30',
@@ -78,7 +70,6 @@ const productList = [
         stock: 10,
         id: 9,
         category: 'Skincare',
-        description: 'Protege la piel del envejecimiento y la fotocarcinogénesis. Mejora la función de barrera epidérmica y otorga elasticidad, suavidad e hidratación. Es resistente al agua y puede aplicarse en pieles sensibles.'
       },
       {
         name: 'Lidherma Agua Micelar',
@@ -87,8 +78,7 @@ const productList = [
         stock: 3,
         id: 10,
         category: 'Skincare',
-        description: 'Mantiene un estado óptimo de hidratación. Para todo tipo de piel.'
       },
 ];
 
-export default productList;
+export default mockProductos;

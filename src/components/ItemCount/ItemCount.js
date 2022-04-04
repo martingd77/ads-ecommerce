@@ -7,8 +7,8 @@ const ItemCount = ({ stock, initial, handleAdd }) => {
 
 const [add, setAdd] = useState(initial);
 
-const addItem = (num) => {
-        setAdd(add + num);
+const addItem = (num, e) => {
+    setAdd(add + num);
 };
 
     return(

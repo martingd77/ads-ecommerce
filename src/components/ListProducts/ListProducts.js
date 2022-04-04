@@ -1,48 +1,44 @@
-import React, { useEffect, useState } from 'react';
-import './ItemList.css'
+import React,{useState, useEffect} from 'react'
 import Item from '../Item/Item';
-import  productList  from '../../data/data.js';
+import mockProductos  from '../../data/mockProductos';
 import { useParams } from 'react-router-dom'
 
-const ItemList = ({children}) => {
+const ListProducts = ({children}) => {
+    const { category } = useParams()
 
-    const { category } = useParams();
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState([])
 
     const getProducts = () => {
         return new Promise((resolve, reject) => {
-            return resolve(productList)
+            return resolve(mockProductos)
         })
     } 
 
     useEffect( () => {
         setProducts([]);
         getProducts().then( (productos) => {
-            filterItemByCategory(productos, category)
+            filterProductByCategory(productos, category)
         })
     }, [category])
 
 
-    const filterItemByCategory = (array , category) => {
+    const filterProductByCategory = (array , category) => {
+
         return array.map( (product, i) => {
+            console.log('product ;', product);
             if(product.category === category) {
                return setProducts(products => [...products, product]);
-            }
-            else{
-                return array
             }
         })
     }
 
     return(
-
-        <div className='item-container'>
+        <div>
             {console.log("products: ", products)}
             { products.map( ( product ) =>  <Item data={product} key={product.id} />)
             }       
         </div>
+    ) 
+}
 
-    );
-};
-
-export default ItemList;
+export default ListProducts;

@@ -1,0 +1,40 @@
+.container-general{
+    width: 90%;
+    
+}
+
+.container-detail{
+    display: flex;
+    padding: 20px 30px;
+}
+
+.detail-left-side{
+    width: 60%;
+
+    min-height: auto;
+    margin-right: 10px;
+    border-color: #bf87f2;
+    border-style:ridge ;
+    border-radius: 5px;
+    box-shadow: 1px 5px 15px #81818129;
+}
+
+.detail-left-side img{
+    padding: 3rem;
+    height: 22rem;
+
+}
+.detail-right-side{
+  min-height: 60vh;
+  width: 40%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  border-color: #bf87f2;
+  border-style:ridge ;
+  border-radius: 5px;
+  box-shadow: 1px 5px 15px #81818129;
+}
+

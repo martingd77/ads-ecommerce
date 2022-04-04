@@ -1,0 +1,20 @@
+.categories-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+section a img{
+    width: 420px;
+}
+.container-card-data{
+    display: flex;
+    justify-items:center;
+    padding: 1em;
+    width: 420px;
+}
+
+div a{
+    text-decoration: none;
+}
