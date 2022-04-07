@@ -1,26 +1,29 @@
-import Container from '@mui/material/Container';
-import { Button } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import {  useNavigate } from 'react-router-dom'
 import  productList  from '../../data/data.js';
 import './ItemDetail.css'
+//styling
+import Container from '@mui/material/Container';
+import { Button } from '@mui/material';
+import Typography from '@mui/material/Typography';
+//components
+import ItemCount from '../ItemCount/ItemCount.js';
 
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.primary,
-  }));
 
 const ItemDetail = () => {
-    const { id, category } = useParams()
-    const [product, setProduct] = useState({})
+    const navigate = useNavigate();
+    const { id, category } = useParams();
+    const [product, setProduct] = useState({});
+    const [quantity, setQuantity] = useState();
+    const [hasProds, setHasProds] = useState(false);
+
+    const handleAdd = (childData) =>{
+        setQuantity(childData);
+        setHasProds(true);
+        console.log('Se agregaron ' + childData + ' productos');
+    };
+
 
     useEffect( () => {
         filterProductById(productList, id)
@@ -33,6 +36,12 @@ const ItemDetail = () => {
             }
         })
     }
+
+    const finishPurchase = () =>{
+        navigate(`/cart/`);
+    }
+
+
     return(
     <Container className='container-general'> 
         <div className='container-detail'>
@@ -50,7 +59,15 @@ const ItemDetail = () => {
                         {console.log('product: ', product)}
                         {product.description}  
                     </Typography>
-                    <Button color="secondary" variant="contained">COMPRAR</Button>
+                    
+                    {hasProds ? 
+                               <Button color="secondary" variant="contained" onClick={finishPurchase}>TERMINAR COMPRA</Button>
+                              :
+                                <ItemCount stock={product.stock} initial={1} handleAdd={handleAdd} ></ItemCount>
+                    }
+
+                     
+                    
             </div>
         </div>
     </Container>

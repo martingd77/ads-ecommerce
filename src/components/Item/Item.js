@@ -1,27 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import './Item.css'
-import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom'
+import CartContext from '../../context/CartContext';
+import Button from '@mui/material/Button';
+
 
 const Item = ({data}) => {
 
-    const { name, price, stock, picture, id } = data
+    const {cartProducts, addProdToCart} = useContext(CartContext);
 
-    const handleAdd = (add, e) =>{
-        alert(`Agregaste ${add} productos al carrito.`);
+    const { name, price, picture, id } = data
+
+    const handleAdd = (add) =>{
+  /*       e.stopPropagation() */
+        addProdToCart();
+        console.log('cartProducts', cartProducts);
+        /* alert(`Agregaste ${add} productos al carrito.`); */
+        
     };
     
-    /* const changePage = () => {
-        navigate(`/productos/${id}`)
-    } */
-
     return(
         <div className='item-card'>
             <Link className='link' to={`/productos/${id}`}>
-                <Card /* onClick={changePage} */ sx={{ minWidth: 275 }}>
+                <Card sx={{ minWidth: 275 }}>
                         <CardContent>
                             <Typography sx={{ fontSize: 15 }} color="text.primary" gutterBottom>
                             {name}
@@ -34,8 +38,12 @@ const Item = ({data}) => {
                             <Typography variant="body2">
                                 $ {price}
                             <br />
-                            <ItemCount stock={stock} handleAdd={handleAdd}  initial={1} />
+                            {/* <ItemCount stock={stock} handleAdd={handleAdd}  initial={1} /> */}
                             </Typography>
+                            <Button variant="contained" color='secondary' size='small' key="Agregar" 
+                                onClick={(e)=> handleAdd(handleAdd)}>
+                                VER DETALLE
+                            </Button>
                         </CardContent>
                     </Card>
             </Link>

@@ -15,7 +15,7 @@ const ItemList = ({children}) => {
         })
     } 
 
-    useEffect( () => {
+    useEffect( () => {  
         setProducts([]);
         getProducts().then( (productos) => {
             filterItemByCategory(productos, category)
