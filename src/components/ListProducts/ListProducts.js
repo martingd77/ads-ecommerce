@@ -2,21 +2,26 @@ import React,{useState, useEffect} from 'react'
 import Item from '../Item/Item';
 import mockProductos  from '../../data/mockProductos';
 import { useParams } from 'react-router-dom'
+import CircularProgress from '@mui/material/CircularProgress';
 
 const ListProducts = ({children}) => {
-    const { category } = useParams()
-
-    const [products, setProducts] = useState([])
+    const { category } = useParams();
+    const [loading, setLoading] = useState(true);
+    const [products, setProducts] = useState([]);
 
     const getProducts = () => {
         return new Promise((resolve, reject) => {
-            return resolve(mockProductos)
+            return setTimeout(() => {
+                resolve(mockProductos)
+            }, 2000);
         })
     } 
 
     useEffect( () => {
         setProducts([]);
+        setLoading(true);
         getProducts().then( (productos) => {
+            setLoading(false);
             filterProductByCategory(productos, category)
         })
     }, [category])
@@ -35,7 +40,11 @@ const ListProducts = ({children}) => {
     return(
         <div>
             {console.log("products: ", products)}
-            { products.map( ( product ) =>  <Item data={product} key={product.id} />)
+            {
+            loading ? 
+                (<CircularProgress color="secondary" />) 
+            : 
+                (<>{products.map( ( product ) =>  <Item data={product} key={product.id}  />)} </>) 
             }       
         </div>
     ) 

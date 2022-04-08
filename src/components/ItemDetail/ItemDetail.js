@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import {  useNavigate } from 'react-router-dom'
 import  productList  from '../../data/data.js';
 import './ItemDetail.css'
+import CartContext from '../../context/CartContext.js';
 //styling
 import Container from '@mui/material/Container';
 import { Button } from '@mui/material';
@@ -17,6 +18,8 @@ const ItemDetail = () => {
     const [product, setProduct] = useState({});
     const [quantity, setQuantity] = useState();
     const [hasProds, setHasProds] = useState(false);
+    const { cartProducts, addProductToCart } = useContext(CartContext)
+
 
     const handleAdd = (childData) =>{
         setQuantity(childData);
@@ -38,6 +41,7 @@ const ItemDetail = () => {
     }
 
     const finishPurchase = () =>{
+        addProductToCart(product);
         navigate(`/cart/`);
     }
 
@@ -65,9 +69,6 @@ const ItemDetail = () => {
                               :
                                 <ItemCount stock={product.stock} initial={1} handleAdd={handleAdd} ></ItemCount>
                     }
-
-                     
-                    
             </div>
         </div>
     </Container>

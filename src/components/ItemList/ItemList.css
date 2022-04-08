@@ -1,12 +1,17 @@
 .item-container{
-    
-display: grid;
-grid-template-columns: repeat(auto-fit, 300px);
-gap: 20px 30px;
-margin: 20px;
-justify-content: center;
-justify-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    gap: 20px 30px;
+    margin: 20px;
+    justify-content: center;
+    justify-items: center;
 }
 
-
+.circular-progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 80vh;
+}
 

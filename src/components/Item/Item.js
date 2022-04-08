@@ -3,29 +3,33 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import './Item.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import CartContext from '../../context/CartContext';
 import Button from '@mui/material/Button';
 
 
-const Item = ({data}) => {
-
-    const {cartProducts, addProdToCart} = useContext(CartContext);
+const Item = ({data}) => {  
+    const navigate = useNavigate();
+    const {cartProducts, addProductToCart} = useContext(CartContext);
 
     const { name, price, picture, id } = data
 
     const handleAdd = (add) =>{
   /*       e.stopPropagation() */
-        addProdToCart();
+        addProductToCart();
         console.log('cartProducts', cartProducts);
         /* alert(`Agregaste ${add} productos al carrito.`); */
         
     };
+
+    const goToDetailPage = (data) => {
+        navigate(`/productos/${id}`, data)
+    }
     
     return(
         <div className='item-card'>
             <Link className='link' to={`/productos/${id}`}>
-                <Card sx={{ minWidth: 275 }}>
+                <Card sx={{ minWidth: 300 , minHeight:280 }}>
                         <CardContent>
                             <Typography sx={{ fontSize: 15 }} color="text.primary" gutterBottom>
                             {name}
@@ -41,7 +45,7 @@ const Item = ({data}) => {
                             {/* <ItemCount stock={stock} handleAdd={handleAdd}  initial={1} /> */}
                             </Typography>
                             <Button variant="contained" color='secondary' size='small' key="Agregar" 
-                                onClick={(e)=> handleAdd(handleAdd)}>
+                                onClick={goToDetailPage}>
                                 VER DETALLE
                             </Button>
                         </CardContent>
