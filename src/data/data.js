@@ -6,7 +6,8 @@ const productList = [
         stock: 5,
         id: 1,
         category: 'Labiales',
-        description: 'Labial Mac, rojo matte. De larga duración, no se corre ni transfiere.'
+        description: 'Labial Mac, rojo matte. De larga duración, no se corre ni transfiere.',
+        quantity: 1
       },
       {
         name: 'Labial nude Mac',
@@ -15,7 +16,8 @@ const productList = [
         stock: 10,
         id: 2,
         category: 'Labiales',
-        description: 'Labial Mac, nude matte. De larga duración, no se corre ni transfiere.'
+        description: 'Labial Mac, nude matte. De larga duración, no se corre ni transfiere.',
+        quantity: 1
       },
       {
         name: 'Labial bordeaux oscuro Mac',
@@ -24,7 +26,8 @@ const productList = [
         stock: 6,
         id: 3,
         category: 'Labiales',
-        description: 'Labial Mac, bordeaux oscuro matte. De larga duración, no se corre ni transfiere.'
+        description: 'Labial Mac, bordeaux oscuro matte. De larga duración, no se corre ni transfiere.',
+        quantity: 1
       },
       {
         name: 'Labial rojo Ricosti',
@@ -33,7 +36,8 @@ const productList = [
         stock: 10,
         id: 4,
         category: 'Labiales',
-        description: 'Labial Ricosti, rojo matte. De larga duración, no se corre ni transfiere.'
+        description: 'Labial Ricosti, rojo matte. De larga duración, no se corre ni transfiere.',
+        quantity: 1
       },
       {
         name: 'Labial nude Ricosti',
@@ -42,7 +46,8 @@ const productList = [
         stock: 3,
         id: 5,
         category: 'Labiales',
-        description: 'Labial Ricosti, nude matte. De larga duración, no se corre ni transfiere.'
+        description: 'Labial Ricosti, nude matte. De larga duración, no se corre ni transfiere.',
+        quantity: 1
       },
       {
         name: 'Brocha N19',
@@ -51,7 +56,8 @@ const productList = [
         stock: 5,
         id: 6,
         category: 'Brochas',
-        description: 'Pelo sintético super suave. Mango de bambú. Angulada ideal para contornear y aplicar rubor.'
+        description: 'Pelo sintético super suave. Mango de bambú. Angulada ideal para contornear y aplicar rubor.',
+        quantity: 1
       },
       {
         name: 'Brocha D23',
@@ -60,7 +66,8 @@ const productList = [
         stock: 10,
         id: 7,
         category: 'Brochas',
-        description: 'Pelo más fuerte y compacto. Para una aplicación correcta de sombras y pigmentos de manera más saturada y puntual.'
+        description: 'Pelo más fuerte y compacto. Para una aplicación correcta de sombras y pigmentos de manera más saturada y puntual.',
+        quantity: 1
       },
       {
         name: 'Brocha D38',
@@ -69,7 +76,8 @@ const productList = [
         stock: 6,
         id: 8,
         category: 'Brochas',
-        description: 'Suave y ligera. Para una aplicación liviana de bases o preparación de la piel.'
+        description: 'Suave y ligera. Para una aplicación liviana de bases o preparación de la piel.',
+        quantity: 1
       },
       {
         name: 'Lidherma Protector Solar SPF30',
@@ -78,7 +86,8 @@ const productList = [
         stock: 10,
         id: 9,
         category: 'Skincare',
-        description: 'Protege la piel del envejecimiento y la fotocarcinogénesis. Mejora la función de barrera epidérmica y otorga elasticidad, suavidad e hidratación. Es resistente al agua y puede aplicarse en pieles sensibles.'
+        description: 'Protege la piel del envejecimiento y la fotocarcinogénesis. Mejora la función de barrera epidérmica y otorga elasticidad, suavidad e hidratación. Es resistente al agua y puede aplicarse en pieles sensibles.',
+        quantity: 1
       },
       {
         name: 'Lidherma Agua Micelar',
@@ -87,7 +96,8 @@ const productList = [
         stock: 3,
         id: 10,
         category: 'Skincare',
-        description: 'Mantiene un estado óptimo de hidratación. Para todo tipo de piel.'
+        description: 'Mantiene un estado óptimo de hidratación. Para todo tipo de piel.',
+        quantity: 1
       },
 ];
 

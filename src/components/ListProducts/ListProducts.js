@@ -3,6 +3,9 @@ import Item from '../Item/Item';
 import mockProductos  from '../../data/mockProductos';
 import { useParams } from 'react-router-dom'
 import CircularProgress from '@mui/material/CircularProgress';
+/* import {collection, getDocs} from "firebase/firestore"
+import database from '../../firebase'; */
+
 
 const ListProducts = ({children}) => {
     const { category } = useParams();
@@ -16,6 +19,15 @@ const ListProducts = ({children}) => {
             }, 2000);
         })
     } 
+
+    /* const getProducts = async () => {
+        const itemsCollection = collection(database, 'products');
+        const productsSnapshot = await getDocs(itemsCollection);
+        console.log('snapshot' , productsSnapshot);
+        const productList = productsSnapshot.docs.map((doc) => {
+            console.log('doc.data:', doc.data)
+        }) 
+    } */
 
     useEffect( () => {
         setProducts([]);

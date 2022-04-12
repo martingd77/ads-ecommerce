@@ -10,20 +10,17 @@ import Button from '@mui/material/Button';
 
 const Item = ({data}) => {  
     const navigate = useNavigate();
-    const {cartProducts, addProductToCart} = useContext(CartContext);
+   /*  const {cartProducts, addProductToCart} = useContext(CartContext);  */
 
     const { name, price, picture, id } = data
 
-    const handleAdd = (add) =>{
-  /*       e.stopPropagation() */
-        addProductToCart();
+  /*   const handleAdd = (data) =>{
+        addProductToCart(data);
         console.log('cartProducts', cartProducts);
-        /* alert(`Agregaste ${add} productos al carrito.`); */
-        
-    };
+    }; */
 
-    const goToDetailPage = (data) => {
-        navigate(`/productos/${id}`, data)
+    const goToDetailPage = (id) => {
+        navigate(`/productos/${id}`, id)
     }
     
     return(

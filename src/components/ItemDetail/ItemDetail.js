@@ -12,19 +12,22 @@ import Typography from '@mui/material/Typography';
 import ItemCount from '../ItemCount/ItemCount.js';
 
 
-const ItemDetail = () => {
+const ItemDetail = ({data}) => {
     const navigate = useNavigate();
     const { id, category } = useParams();
     const [product, setProduct] = useState({});
     const [quantity, setQuantity] = useState();
-    const [hasProds, setHasProds] = useState(false);
+/*     const [hasProds, setHasProds] = useState(false); */
     const { cartProducts, addProductToCart } = useContext(CartContext)
 
 
     const handleAdd = (childData) =>{
         setQuantity(childData);
-        setHasProds(true);
+     /*    setHasProds(true); */
         console.log('Se agregaron ' + childData + ' productos');
+        addProductToCart(product,childData);
+        console.log('producto desde detail: ' + product)
+        navigate(`/cart/`);
     };
 
 
@@ -39,12 +42,12 @@ const ItemDetail = () => {
             }
         })
     }
-
-    const finishPurchase = () =>{
-        addProductToCart(product);
+/* 
+    const finishPurchase = (data) =>{
+        console.log('Productos agregados ' + cartProducts);
+        addProductToCart(data);
         navigate(`/cart/`);
-    }
-
+    } */
 
     return(
     <Container className='container-general'> 
@@ -64,9 +67,9 @@ const ItemDetail = () => {
                         {product.description}  
                     </Typography>
                     
-                    {hasProds ? 
-                               <Button color="secondary" variant="contained" onClick={finishPurchase}>TERMINAR COMPRA</Button>
-                              :
+                    {/* hasProds ? 
+                               <Button color="secondary" variant="contained" onClick={finishPurchase()}>TERMINAR COMPRA</Button>
+                              : */
                                 <ItemCount stock={product.stock} initial={1} handleAdd={handleAdd} ></ItemCount>
                     }
             </div>

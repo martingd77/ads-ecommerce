@@ -1,0 +1,127 @@
+.cart-section {
+    color:rgb(105, 51, 155);
+    align-content: center;
+    padding: 1rem;
+}
+
+.cart-section .col-cart-table__head {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #cccccc;
+    margin-bottom: 20px;
+}
+
+.cart-section .col-cart-table__head h2 {
+    font-size: 16px;
+    text-align: left;
+}
+
+.cart-section .col-cart-table__head h2:nth-of-type(1) {
+    width: 12%;
+}
+
+.cart-section .col-cart-table__head h2:nth-of-type(2) {
+    width: 35%;
+}
+
+.cart-section .col-cart-table__head h2:nth-of-type(3) {
+    width: 11%;
+}
+
+.cart-section .col-cart-table__head h2:nth-of-type(4) {
+    width: 7%;}
+
+.cart-section .col-cart-table__head h2:nth-of-type(5) {
+    width: 7%;
+}
+
+.cart-table__content {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-table__content-img {
+    width: 10%;
+    overflow: hidden;
+}
+
+.cart-table__content-img img {
+    width: 100%;
+}
+
+.cart-table__content-title {
+    align-self: center;
+    width: 40%;
+}
+
+.cart-table__content-price {
+    align-self: center;
+    width: 10%;
+}
+
+.cart-table__content-quantity {
+    align-self: center;
+    width: 10%;
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  
+  .cart-footer > button.btn-custom {
+    max-width: 300px;
+    height: fit-content;
+    background: white !important;
+    color: black !important;
+    border: 1px solid black;
+  }
+
+
+.cart-checkout-details {
+    background: #fafafa;
+    padding-top: 10px;
+  }
+  
+  .cart-checkout-details .cart-checkout__subtotal, .cart-checkout-details .cart-checkout__total {
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .cart-checkout__subtotal p, .cart-checkout__subtotal span {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  
+  .cart-checkout__total p, .cart-checkout__total span {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .cart-empty{
+      align-content: center;
+  }
+
+  .cart-empty img{
+      max-width: 500px;
+  }
+
+  .btn-delete{
+      background-color: #9c27b0;
+      border-color: antiquewhite;
+      border-radius: 40%;
+      border-style: double;
+  }
+
+  .delete-icon{
+    color: white;
+}

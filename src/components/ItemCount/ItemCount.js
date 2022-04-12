@@ -3,9 +3,9 @@ import Box from '@mui/material/Box';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import React, {useState} from 'react';
 
-const ItemCount = ({ stock, initial, handleAdd, childQuantity}) => {
+const ItemCount = ({ stock, handleAdd, childQuantity}) => {
 
-const [count, setCount] = useState(initial);
+const [count, setCount] = useState(1);
 
 const addItem = (num, e) => {
     setCount(count + num);
@@ -26,7 +26,7 @@ const addItem = (num, e) => {
             <ButtonGroup color="secondary" aria-label="medium secondary button group">
                 <Button size='large' key="remove" 
                     onClick={ () => addItem(-1)} 
-                    disabled={count === initial ? true : null}> 
+                    disabled={count === 1 ? true : null}> 
                     - 
                 </Button>
                 <Button size='large' disabled key="stock">{count}</Button>  

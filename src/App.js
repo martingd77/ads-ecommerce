@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 /* COMPONENTS */
 import NavBar from './components/NavBar/NavBar';
 import ItemDetail from './components/ItemDetail/ItemDetail';
+import Cart from './components/Cart/Cart';
 /* import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
  */
@@ -12,10 +13,10 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Home from './pages/home';
 import Contacto from './pages/contacto';
 import NotFound from './pages/NotFound';
-import CategoryContainer from './components/CategoryContainer/CategoryContainer';
+
 
 //context
-import CartContext, {CartProvider} from './context/CartContext'
+import  {CartProvider} from './context/CartContext'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <BrowserRouter>
           <NavBar />
           <Routes>
+            <Route path="/cart" element={<Cart />}/>  
             <Route path='/' element={<Home/>} ></Route>
             <Route path="/:category/" element={<Home />}/>
             <Route path="/:category/:id" element={<ItemDetail />}/>
