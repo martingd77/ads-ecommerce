@@ -121,7 +121,7 @@ const CartWidget = () => {
                 
                 <Divider />
                 <div className='footer-dropdown-cart'>
-                    <Button color='secondary' className="btn-custom"><Link to="/cart">Iniciar la compra</Link></Button>
+                    <Button color='secondary' variant="contained" className="btn-custom"><Link to="/cart">Iniciar la compra</Link></Button>
                 </div>
             </Menu>
         </div>

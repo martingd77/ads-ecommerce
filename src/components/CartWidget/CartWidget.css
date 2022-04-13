@@ -1,9 +1,5 @@
-
-.footer-modal-cart {
-    padding: 0px 10px;
-  }
-
 .item-cart-dropdown {
+    font-family:cursive;
     display: flex;
     width: 280px;
     align-content: center; 
@@ -26,25 +22,38 @@
 
 
 .item-cart-dropdown__info {
+    font-family:revert;
     width: 30%;
     padding-left: 10px;
     padding-right: 10px;
   }
   
   .item-cart-dropdown__action {
+    font-family:revert;
     width: 10%;
   }
   
 
   .modal-p {
+    
     display: flex;
     flex-direction: row-reverse;
     color:rgb(105, 51, 155);
     margin-right: 10px;
   }
 
+
+  .footer-dropdown-cart {
+  padding: 0px 10px;
+  }
+
   .btn-custom {
+    font-family:cursive;
     padding: 7px 15px ;
     width: 100% ;
   }
   
+  .btn-custom a{
+    color: white;
+    font-weight: 600;
+  }

@@ -66,7 +66,7 @@ const Cart = () => {
                         <p>Total</p>
                         <span>$ {calculeTotal()}</span>
                     </div>
-                    <Button >Completar Compra</Button>
+                    <Button className='btn-custom' color='secondary' variant="contained" >Completar Compra</Button>
                 </div>
             </div>
         </div>

@@ -88,17 +88,17 @@
   }
   
   .cart-checkout-details .cart-checkout__subtotal, .cart-checkout-details .cart-checkout__total {
-    padding: 0px 20px;
+    padding: 0px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 10px;
+    padding-bottom: 7px;
     border-bottom: 1px solid #ccc;
   }
   
   .cart-checkout__subtotal p, .cart-checkout__subtotal span {
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 400;
   }
   
   .cart-checkout__total p, .cart-checkout__total span {
@@ -124,4 +124,7 @@
 
   .delete-icon{
     color: white;
+}
+.btn-custom a{
+    font-weight: 600;
 }
