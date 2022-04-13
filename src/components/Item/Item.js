@@ -35,7 +35,7 @@ const Item = ({data}) => {
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
                             
                             </Typography>
-                            <img className='catalog-img' src={picture} alt=''/>
+                            <img className='catalog-img' src={`./img/${picture}`} alt={picture}/>
                             <Typography variant="body2">
                                 $ {price}
                             <br />

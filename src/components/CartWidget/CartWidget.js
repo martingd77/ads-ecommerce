@@ -101,20 +101,16 @@ const CartWidget = () => {
                     return(
                         <MenuItem className='item-cart-dropdown' key={cartProduct.id}>
                             <div className='item-cart-dropdown__info'>
-                               {/*  <p>{cartProduct.title}</p> */}
                                 <span> {cartProduct.quantity}</span>
                             </div>
                             <div className='item-cart-dropdown__img'>
-                                <img /* className='img-cart'  */src={cartProduct.picture} alt={cartProduct.picture}/> 
+                                <img src={`../img/${cartProduct.picture}`} alt={cartProduct.picture}/> 
                             </div>
                             <div className='item-cart-dropdown__info'>
-                                {/* <p>{cartProduct.title}</p> */}
+                                
                                 <span>$ {cartProduct.price}</span>
                             </div>
                             
-                            {/* <div className='item-cart-dropdown__action'>
-                                <DeleteIcon />
-                            </div> */}
                         </MenuItem>
                     )
                 })}

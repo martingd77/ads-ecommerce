@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './ItemList.css'
 import Item from '../Item/Item';
-import  productList  from '../../data/data.js';
 import { useParams } from 'react-router-dom'
 import CircularProgress from '@mui/material/CircularProgress';
-
+import { collection, getDocs, query, where } from 'firebase/firestore'
+import database from '../../firebase';
 
 const ItemList = ({children}) => {
 
@@ -12,13 +12,17 @@ const ItemList = ({children}) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const getProducts = () => {
-        return new Promise((resolve, reject) => {
-            return setTimeout(() => {
-                resolve(productList)
-            }, 1000);
-            
-        })
+    const getProducts = async () => {
+        const itemsCollection = collection(database, 'products');
+        const productsSnapshot = await getDocs(itemsCollection);
+        console.log('snapshot' , productsSnapshot);
+        const productList = productsSnapshot.docs.map((doc) => {
+            let product = doc.data();
+            product.id = doc.id;
+            console.log('product: ', product)
+            return product;
+        }) 
+        return productList;
     } 
 
     useEffect( () => {  

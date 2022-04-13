@@ -1,5 +1,4 @@
 import './App.css';
-import { useState, useEffect,useContext } from 'react'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 /* COMPONENTS */
 import NavBar from './components/NavBar/NavBar';
@@ -25,12 +24,12 @@ function App() {
         <BrowserRouter>
           <NavBar />
           <Routes>
+            <Route path='*' element={<NotFound/>} ></Route>
             <Route path="/cart" element={<Cart />}/>  
             <Route path='/' element={<Home/>} ></Route>
             <Route path="/:category/" element={<Home />}/>
             <Route path="/:category/:id" element={<ItemDetail />}/>
             <Route path='/contacto' element={<Contacto/>} ></Route>
-            <Route path='*' element={<NotFound/>} ></Route>
           </Routes>
         </BrowserRouter>
       </CartProvider>
