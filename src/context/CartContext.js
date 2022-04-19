@@ -4,18 +4,20 @@ const CartContext = createContext();
 
 const CartProvider = ({children}) => {
     const [cartProducts, setCartProducts] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
 
     const addProductToCart = (product, quantity) =>{
         let exist = cartProducts.find(cartProduct => cartProduct.id === product.id)
         if(!exist){
             product.quantity = quantity;
+            setTotalPrice(totalPrice + (product.price * product.quantity));
             setCartProducts (cartProducts=>[...cartProducts,product]);
         }
        /*  !exist && setCartProducts (cartProducts=>[...cartProducts,product]); */
         console.log('producto a agregar: ', product);
     }
 
-    const calculeTotal = () => {
+   /*  const calculeTotal = () => {
         let total = 0
 
         cartProducts.map( (cartProduct) => {
@@ -23,7 +25,7 @@ const CartProvider = ({children}) => {
         })
 
         return total
-    }
+    } */
 
     const removeProductFromCart = (product) => {
         setCartProducts(cartProducts.filter( cartProduct => cartProduct.id !== product.id))
@@ -32,9 +34,8 @@ const CartProvider = ({children}) => {
     const data = {
         cartProducts, 
         addProductToCart,
-        calculeTotal,
+        totalPrice,
         removeProductFromCart
-        
     }
     
     return(
