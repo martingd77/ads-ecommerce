@@ -30,7 +30,7 @@ const Cart = () => {
           items: cartProducts.map((cartProduct) => {
             return{
                 id: cartProduct.id,
-                title: cartProduct.title,
+                title: cartProduct.name,
                 price: cartProduct.price
             }
           }),
