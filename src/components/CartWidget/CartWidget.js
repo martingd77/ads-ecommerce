@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-/* import DeleteIcon from '@mui/icons-material/Delete'; */
 import Button from '@mui/material/Button';
 //Styles
 import './CartWidget.css'
@@ -45,7 +44,7 @@ const CartWidget = () => {
             <div>
             <Typography
                 variant="subtitle1"
-                /* component="div" */
+            
                 sx={{ mr: 0, ml: 1, display: 'inline' , verticalAlign:'bottom' }}
             >
                 {calculeItemsTotal()}

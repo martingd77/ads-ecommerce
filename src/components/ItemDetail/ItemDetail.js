@@ -7,7 +7,6 @@ import { doc, getDoc } from "firebase/firestore";
 import database from '../../firebase.js';
 //styling
 import Container from '@mui/material/Container';
-/* import { Button } from '@mui/material'; */
 import Typography from '@mui/material/Typography';
 //components
 import ItemCount from '../ItemCount/ItemCount.js';
@@ -18,7 +17,6 @@ const ItemDetail = ({Item}) => {
     const { id, category } = useParams();
     const [product, setProduct] = useState({});
     const [quantity, setQuantity] = useState();
-/*     const [hasProds, setHasProds] = useState(false); */
     const { cartProducts, addProductToCart } = useContext(CartContext)
 
 
@@ -39,7 +37,6 @@ const ItemDetail = ({Item}) => {
 
     const handleAdd = (childData) =>{
         setQuantity(childData);
-     /*    setHasProds(true); */
         console.log('Se agregaron ' + childData + ' productos');
         addProductToCart(product,childData);
         console.log('producto desde detail: ' + product)
@@ -68,10 +65,8 @@ const ItemDetail = ({Item}) => {
                         {product.description}  
                     </Typography>
                     
-                    {/* hasProds ? 
-                               <Button color="secondary" variant="contained" onClick={finishPurchase()}>TERMINAR COMPRA</Button>
-                              : */
-                                <ItemCount stock={product.stock} initial={1} handleAdd={handleAdd} ></ItemCount>
+                    {
+                        <ItemCount stock={product.stock} initial={1} handleAdd={handleAdd} ></ItemCount>
                     }
             </div>
         </div>

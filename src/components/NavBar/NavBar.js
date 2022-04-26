@@ -24,7 +24,7 @@ const linkStyle = {
   color: 'white'
 };
 
-const pages = ['Servicios', 'Nosotros'];
+const pages = [];
 const categorias = [
   {title : 'LABIALES', url : '/Labiales'},
   {title: 'BROCHAS', url:'/Brochas'},

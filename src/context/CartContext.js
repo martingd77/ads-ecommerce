@@ -13,29 +13,24 @@ const CartProvider = ({children}) => {
             setTotalPrice(totalPrice + (product.price * product.quantity));
             setCartProducts (cartProducts=>[...cartProducts,product]);
         }
-       /*  !exist && setCartProducts (cartProducts=>[...cartProducts,product]); */
         console.log('producto a agregar: ', product);
     }
 
-   /*  const calculeTotal = () => {
-        let total = 0
-
-        cartProducts.map( (cartProduct) => {
-           total = (cartProduct.price * cartProduct.quantity) + total
-        })
-
-        return total
-    } */
-
     const removeProductFromCart = (product) => {
         setCartProducts(cartProducts.filter( cartProduct => cartProduct.id !== product.id))
+    }
+
+    const clearCartContext = () => {
+        setCartProducts([]);
+    
     }
 
     const data = {
         cartProducts, 
         addProductToCart,
         totalPrice,
-        removeProductFromCart
+        removeProductFromCart,
+        clearCartContext
     }
     
     return(

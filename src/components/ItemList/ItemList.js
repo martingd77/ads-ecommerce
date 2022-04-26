@@ -30,7 +30,6 @@ const ItemList = ({children}) => {
         setLoading(true);
         getProducts().then( (productos) => {
             setLoading(false);
-            /* filterItemByCategory(productos, category) */
             category ? filterItemByCategory(productos, category) : setProducts(productos);
         })
     }, [category])

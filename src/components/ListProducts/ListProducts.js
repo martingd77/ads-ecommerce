@@ -12,14 +12,6 @@ const ListProducts = ({children}) => {
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
 
- /*    const getProducts = () => {
-        return new Promise((resolve, reject) => {
-            return setTimeout(() => {
-                resolve(mockProductos)
-            }, 2000);
-        })
-    }  */
-
     const getProducts = async () => {
         const itemsCollection = collection(database, 'products');
         const productsSnapshot = await getDocs(itemsCollection);

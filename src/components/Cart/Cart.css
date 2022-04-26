@@ -128,3 +128,21 @@
 .btn-custom a{
     font-weight: 600;
 }
+.container{
+    margin: 5px;
+    padding: 5px;
+}
+.userForm{
+    width: 500px;
+    height: 90px;
+}
+
+.inputs{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 5px;
+    flex-wrap: nowrap;
+}

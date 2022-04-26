@@ -10,15 +10,7 @@ import Button from '@mui/material/Button';
 
 const Item = ({data}) => {  
     const navigate = useNavigate();
-   /*  const {cartProducts, addProductToCart} = useContext(CartContext);  */
-
     const { name, price, picture, id } = data
-
-  /*   const handleAdd = (data) =>{
-        addProductToCart(data);
-        console.log('cartProducts', cartProducts);
-    }; */
-
     const goToDetailPage = (id) => {
         navigate(`/productos/${id}`, id)
     }
@@ -38,8 +30,6 @@ const Item = ({data}) => {
                             <img className='catalog-img' src={`./img/${picture}`} alt={picture}/>
                             <Typography variant="body2">
                                 $ {price}
-                            <br />
-                            {/* <ItemCount stock={stock} handleAdd={handleAdd}  initial={1} /> */}
                             </Typography>
                             <Button variant="contained" color='secondary' size='small' key="Agregar" 
                                 onClick={goToDetailPage}>

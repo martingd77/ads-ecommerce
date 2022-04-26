@@ -4,9 +4,7 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import React, {useState} from 'react';
 
 const ItemCount = ({ stock, handleAdd, childQuantity}) => {
-
 const [count, setCount] = useState(1);
-
 const addItem = (num, e) => {
     setCount(count + num);
 };
